@@ -87,13 +87,13 @@ module XapianFu #:nodoc:
   #   XapianDb.new(:fields => { :title => { :type => String },
   #                             :slug => { :type => String, :index => false },
   #                             :created_at => { :type => Time, :store => true },
-  #                             :votes => { :type => Fixnum, :store => true },
+  #                             :votes => { :type => Integer, :store => true },
   #                           })
   #
   # XapianFu will use the :type option when instantiating a store
   # value, so you'll get back a Time object rather than the result of
   # Time's to_s method as is the default.  Defining the type for
-  # numerical classes (such as Time, Fixnum and Bignum) allows
+  # numerical classes (such as Time and Integer) allows
   # XapianFu to to store them on-disk in a much more efficient way,
   # and sort them efficiently (without having to resort to storing
   # leading zeros or anything like that).

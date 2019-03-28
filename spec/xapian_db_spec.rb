@@ -805,10 +805,10 @@ describe XapianDb do
 
     it "should return a hash of field names set as a hash with the :fields option" do
       xdb = XapianDb.new(:fields => { :name => String, :gender => String,
-                           :age => { :type => Fixnum } })
+                           :age => { :type => Integer } })
       xdb.fields[:name].should == String
       xdb.fields[:gender].should == String
-      xdb.fields[:age].should == Fixnum
+      xdb.fields[:age].should == Integer
     end
 
     it "should return an empty array by default" do
